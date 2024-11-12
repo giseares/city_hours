@@ -39,6 +39,8 @@ function calculateTime() {
 
   const offsetMap = {
     argentina: 0,
+    montana: -3,
+    toronto: -2,
     seattle: -5,
     londres: +3,
     nigeria: +4
