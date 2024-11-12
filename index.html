@@ -20,5 +20,24 @@
     <div id="nigeria" class="time"></div>
   </div>
 
+  <div class="container">
+    <h2>Calculate the Time in Different Cities for a Meeting</h2>
+    <label for="city">Selecciona una ciudad:</label>
+    <select id="city">
+      <option value="seattle">Seattle</option>
+      <option value="montana">Montana</option>
+      <option value="toronto">Toronto</option>
+      <option value="argentina">Buenos Aires</option>
+      <option value="londres">Londres</option>
+      <option value="nigeria">Nigeria</option>
+    </select>
+    <br><br>
+    <label for="inputTime">Put the time (HH:MM):</label>
+    <input type="time" id="inputTime">
+    <br><br>
+    <button onclick="calculateTime()">Calculate</button>
+    <div id="result" class="time" style="margin-top: 20px;"></div>
+  </div>
+
 </body>
 </html>

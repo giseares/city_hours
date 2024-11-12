@@ -10,7 +10,7 @@ function updateTimes() {
 
   const montanaTime = new Date(argentinaTime);
   montanaTime.setHours(argentinaTime.getHours() - 3);
-  document.getElementById("montana").innerText = `Seattle: ${montanaTime.toLocaleTimeString('es-AR', options)}`;
+  document.getElementById("montana").innerText = `Montana: ${montanaTime.toLocaleTimeString('es-AR', options)}`;
 
   const torontoTime = new Date(argentinaTime);
   torontoTime.setHours(argentinaTime.getHours() - 2);
@@ -24,6 +24,43 @@ function updateTimes() {
   nigeriaTime.setHours(argentinaTime.getHours() + 4);
   document.getElementById("nigeria").innerText = `Nigeria: ${nigeriaTime.toLocaleTimeString('es-AR', options)}`;
 }
+
+function calculateTime() {
+  const selectedCity = document.getElementById("city").value;
+  const inputTime = document.getElementById("inputTime").value;
+  if (!inputTime) {
+    alert("Please, put the hour.");
+    return;
+  }
+
+  const [inputHours, inputMinutes] = inputTime.split(":").map(Number);
+  let baseTime = new Date();
+  baseTime.setHours(inputHours, inputMinutes, 0);
+
+  const offsetMap = {
+    argentina: 0,
+    seattle: -5,
+    londres: +3,
+    nigeria: +4
+  };
+
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = "";
+
+  for (const [city, offset] of Object.entries(offsetMap)) {
+    if (city !== selectedCity) {
+      const cityTime = new Date(baseTime);
+      cityTime.setHours(baseTime.getHours() + offsetMap[city] - offsetMap[selectedCity]);
+
+      resultDiv.innerHTML += `<p>${capitalize(city)}: ${cityTime.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false })}</p>`;
+    }
+  }
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 
 updateTimes();
 setInterval(updateTimes, 60000); // Actualiza cada minuto
