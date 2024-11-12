@@ -10,7 +10,7 @@ function updateTimes() {
 
   const torontoTime = new Date(argentinaTime);
   torontoTime.setHours(argentinaTime.getHours() - 2);
-  document.getElementById("toronto").innerText = `Seattle: ${torontoTime.toLocaleTimeString('es-AR', options)}`;
+  document.getElementById("toronto").innerText = `Toronto: ${torontoTime.toLocaleTimeString('es-AR', options)}`;
 
   const londonTime = new Date(argentinaTime);
   londonTime.setHours(argentinaTime.getHours() + 3);
