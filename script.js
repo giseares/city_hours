@@ -8,6 +8,10 @@ function updateTimes() {
   seattleTime.setHours(argentinaTime.getHours() - 5);
   document.getElementById("seattle").innerText = `Seattle: ${seattleTime.toLocaleTimeString('es-AR', options)}`;
 
+  const montanaTime = new Date(argentinaTime);
+  montanaTime.setHours(argentinaTime.getHours() - 3);
+  document.getElementById("montana").innerText = `Seattle: ${montanaTime.toLocaleTimeString('es-AR', options)}`;
+
   const torontoTime = new Date(argentinaTime);
   torontoTime.setHours(argentinaTime.getHours() - 2);
   document.getElementById("toronto").innerText = `Toronto: ${torontoTime.toLocaleTimeString('es-AR', options)}`;
