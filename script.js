@@ -8,9 +8,9 @@ function updateTimes() {
   seattleTime.setHours(argentinaTime.getHours() - 5);
   document.getElementById("seattle").innerText = `Seattle: ${seattleTime.toLocaleTimeString('es-AR', options)}`;
 
-  const seattleTime = new Date(argentinaTime);
-  seattleTime.setHours(argentinaTime.getHours() - 2);
-  document.getElementById("toronto").innerText = `Seattle: ${seattleTime.toLocaleTimeString('es-AR', options)}`;
+  const torontoTime = new Date(argentinaTime);
+  torontoTime.setHours(argentinaTime.getHours() - 2);
+  document.getElementById("toronto").innerText = `Seattle: ${torontoTime.toLocaleTimeString('es-AR', options)}`;
 
   const londonTime = new Date(argentinaTime);
   londonTime.setHours(argentinaTime.getHours() + 3);
