@@ -38,10 +38,10 @@ function calculateTime() {
   baseTime.setHours(inputHours, inputMinutes, 0);
 
   const offsetMap = {
-    argentina: 0,
+    seattle: -5,
     montana: -3,
     toronto: -2,
-    seattle: -5,
+    argentina: 0,
     londres: +3,
     nigeria: +4
   };
