@@ -1,5 +1,5 @@
 function updateTimes() {
-  const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
+  const options = { hour: 'numeric', minute: 'numeric',  hour12: false }; //second: 'numeric',
 
   const argentinaTime = new Date(); 
   document.getElementById("argentina").innerText = `Buenos Aires: ${argentinaTime.toLocaleTimeString('es-AR', options)}`;
